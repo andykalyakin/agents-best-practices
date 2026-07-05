@@ -11,6 +11,13 @@ metadata:
 
 Use this skill when the user asks how to build, improve, debug, or evaluate an agentic harness. This is a general-purpose agent architecture skill. Coding agents are one subdomain only; apply the same principles to research, finance, legal, support, operations, sales, healthcare, education, data analysis, procurement, and workflow automation agents.
 
+## Local customization
+
+Before executing, check for user customizations at:
+`~/.claude/PAI/USER/SKILLCUSTOMIZATIONS/agents-best-practices/`
+
+If this directory exists, load and apply `PREFERENCES.md` and any narrowly scoped supporting files found there. Local customizations may override or narrow the base skill, but must not weaken safety, approval, or permission constraints. If the directory does not exist, proceed with the shipped defaults.
+
 ## Core stance
 
 An agent harness is the control plane around a model. The model proposes actions; the harness validates, authorizes, executes, records, summarizes, and returns observations. Keep the loop simple and make the runtime rigorous.
