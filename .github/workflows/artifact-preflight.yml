@@ -16,5 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Deterministic regression self-test
+      - name: Deterministic self-test
         run: node tools/artifact-preflight/artifact-preflight.mjs --self-test
+      - name: Valdai known-bad regression
+        run: node tools/artifact-preflight/test/regression-test.mjs
